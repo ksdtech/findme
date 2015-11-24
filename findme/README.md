@@ -19,7 +19,12 @@ Keyboard expander for user names.  Helpful for little ones.
 ## Xcode Notes
 Targeted for OS X 10.6, built on Xcode 6.3 on OS X 10.10.
 
-Jumped through various
+Jumped through various hoops with git.  Created a .gitignore file to the findme/findme folder 
+and added it to Supporting Files (you need to press Command-Shift-. when the file selection dialog
+appears to see dotfiles).  Then added sample files, students-sample.txt and AppConfig-sample.plist
+to the Supporting Files group, but removed them from targets. Finally added the real students.txt
+and AppConfig.plist files (and checked the findme target for them). The .gitignore will hopefully
+keep them out of Xcode's git version control.
 
 ### 10.6 Compatiblity Notes
 1. "Illegal Configuration. Auto Layout on OS X prior to 10.7"
