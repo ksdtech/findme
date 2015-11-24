@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>updateApiKey</key>
+	<string>yourApiKeyHere</string>
+	<key>updateURL</key>
+	<string>http://server.example.com/fetchusers</string>
+	<key>userDomainSuffix</key>
+	<string>@kentfieldschools.org</string>
+</dict>
+</plist>

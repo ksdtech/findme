@@ -13,10 +13,10 @@
 		2CC794DB1C03C1B600A9A91B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794DA1C03C1B600A9A91B /* Images.xcassets */; };
 		2CC794DE1C03C1B600A9A91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794DC1C03C1B600A9A91B /* Main.storyboard */; };
 		2CC794EA1C03C1B600A9A91B /* findmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC794E91C03C1B600A9A91B /* findmeTests.m */; };
-		2CC794FC1C03EB6100A9A91B /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794FB1C03EB6100A9A91B /* AppConfig.plist */; };
-		2CC794FD1C03EB6100A9A91B /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794FB1C03EB6100A9A91B /* AppConfig.plist */; };
 		2CC794FF1C03FA7300A9A91B /* students-sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794FE1C03FA7300A9A91B /* students-sample.txt */; };
 		2CC795001C03FA7300A9A91B /* students-sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794FE1C03FA7300A9A91B /* students-sample.txt */; };
+		2CC795021C03FB0B00A9A91B /* AppConfig-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC795011C03FB0B00A9A91B /* AppConfig-sample.plist */; };
+		2CC795031C03FB0B00A9A91B /* AppConfig-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC795011C03FB0B00A9A91B /* AppConfig-sample.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 		2CC794E81C03C1B600A9A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC794E91C03C1B600A9A91B /* findmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = findmeTests.m; sourceTree = "<group>"; };
 		2CC794F61C03D18600A9A91B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2CC794FB1C03EB6100A9A91B /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		2CC794FE1C03FA7300A9A91B /* students-sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "students-sample.txt"; sourceTree = "<group>"; };
+		2CC795011C03FB0B00A9A91B /* AppConfig-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppConfig-sample.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +100,11 @@
 		2CC794D01C03C1B600A9A91B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2CC795011C03FB0B00A9A91B /* AppConfig-sample.plist */,
 				2CC794FE1C03FA7300A9A91B /* students-sample.txt */,
 				2CC794D11C03C1B600A9A91B /* Info.plist */,
 				2CC794D51C03C1B600A9A91B /* main.m */,
 				2CC794F61C03D18600A9A91B /* README.md */,
-				2CC794FB1C03EB6100A9A91B /* AppConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CC794FC1C03EB6100A9A91B /* AppConfig.plist in Resources */,
 				2CC794DB1C03C1B600A9A91B /* Images.xcassets in Resources */,
 				2CC794FF1C03FA7300A9A91B /* students-sample.txt in Resources */,
+				2CC795021C03FB0B00A9A91B /* AppConfig-sample.plist in Resources */,
 				2CC794DE1C03C1B600A9A91B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC795031C03FB0B00A9A91B /* AppConfig-sample.plist in Resources */,
 				2CC795001C03FA7300A9A91B /* students-sample.txt in Resources */,
-				2CC794FD1C03EB6100A9A91B /* AppConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
