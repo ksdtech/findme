@@ -2,9 +2,12 @@
 Keyboard expander for user names.  Helpful for little ones.
 
 ## Build Instructions
-1. Make a tab-delimited text file that has a current list of your domain's user names.
+1. Make a tab-delimited text file that has a current list of your domain's user names. 
+    Add an "Empty" file to the Supporting Files group as "students.txt", and add it to the "findme"
+    Xcode target.
 
-2. Enter configuration information in AppConfig.plist.  There are three keys:
+2. Add a Property List file to the Supporting Files group as AppConfig.plist, and also add it to the "findme" Xcode target.
+    The plist file needs three keys:
     * userDomainSuffix:  like "@example.com" (append this to user names)
     * updateURL:         "http://example.com/users"
     * updateApiKey:      "apikey" (sent to updateURL in Authorization header)
@@ -15,6 +18,8 @@ Keyboard expander for user names.  Helpful for little ones.
 
 ## Xcode Notes
 Targeted for OS X 10.6, built on Xcode 6.3 on OS X 10.10.
+
+Jumped through various
 
 ### 10.6 Compatiblity Notes
 1. "Illegal Configuration. Auto Layout on OS X prior to 10.7"
