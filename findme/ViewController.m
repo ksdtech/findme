@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 NSString *studentFileName = @"students.txt";
-NSString *userDomainSuffix = @"@kentfieldschools.org";
+// NSString *userDomainSuffix = @"@kentfieldschools.org";
 
 @interface ViewController ()
 
@@ -23,6 +23,12 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
 @property BOOL completePosting;
 @property BOOL commandHandling;
 
+// Loaded from config file
+@property NSString *userDomainSuffix;
+@property NSString *updateURL;
+@property NSString *updateApiKey;
+@property NSString *updateAuthHeader;
+
 @end
 
 @implementation ViewController
@@ -31,6 +37,8 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
     [super awakeFromNib];
     
     // Do any additional setup after loading the user interface.
+    
+    [self loadConfiguration];
     
     // Read list of user names from data file in bundle.
     [self buildUserDictionary];
@@ -106,6 +114,9 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
 // -------------------------------------------------------------------------------
 //  readUserDictioary
 //
+//  Read a tab-delimited text file and build a dictionary. The first column
+//  of the tab-delimited text file must contain the user names
+//  (without the "userDomainSuffix").
 // -------------------------------------------------------------------------------
 - (BOOL)readUserDictionary:(NSString *)filePath {
     NSString *text = [NSString stringWithContentsOfFile:filePath encoding: NSUTF8StringEncoding error:nil];
@@ -118,11 +129,30 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
         
         // First field on each line is the username (without domain)
         if ([fields count] >= 1) {
-            NSString *username = [fields[0] stringByAppendingString:userDomainSuffix];
+            NSString *username = [fields[0] stringByAppendingString:_userDomainSuffix];
             [_userDictionary setObject:fields forKey:username];
         }
     }
     return [_userDictionary count] > 0;
+}
+
+// -------------------------------------------------------------------------------
+//  loadConfiguration
+//
+//  Read plist information.  The AppConfig.plist file must have three config
+//  items:
+//    userDomainSuffix:  like "@example.com" (append this to user names)
+//    updateURL:         "http://example.com/users"
+//    updateApiKey:      "apikey" (sent to updateURL in Authorization header)
+// -------------------------------------------------------------------------------
+- (void)loadConfiguration {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"AppConfig" ofType:@"plist"];
+    NSDictionary *config = [[NSDictionary alloc] initWithContentsOfFile:path];
+   
+    _userDomainSuffix = (NSString *)[config objectForKey:@"userDomainSuffix"];
+    _updateURL = (NSString *)[config objectForKey:@"updateURL"];
+    _updateApiKey = (NSString *)[config objectForKey:@"updateApiKey"];
+    _updateAuthHeader = [[NSString alloc] initWithFormat:@"Bearer %@", _updateApiKey];
 }
 
 // -------------------------------------------------------------------------------
@@ -151,6 +181,30 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
             // TODO: Handle the error.
         }
     }
+}
+
+- (BOOL)saveUserList:(NSData *)contents {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *appFilePath = [[self applicationSupportDirectory]
+                             stringByAppendingPathComponent:studentFileName];
+    NSString *tempFilePath = [[self applicationSupportDirectory]
+                             stringByAppendingPathComponent:@"tempfile.txt"];
+    // Start clean
+    [fm removeItemAtPath:tempFilePath error:nil];
+    
+    if (![fm createFileAtPath:tempFilePath contents:contents attributes:nil]) {
+        NSLog(@"Failed to save temp file!");
+        return false;
+    }
+    
+    [fm removeItemAtPath:appFilePath error:nil];
+    if (![fm moveItemAtPath:tempFilePath toPath:appFilePath error:nil]) {
+        // Try to finish clean
+        [fm removeItemAtPath:tempFilePath error:nil];
+        NSLog(@"Failed to move temp file!");
+        return false;
+    }
+    return true;
 }
 
 // -------------------------------------------------------------------------------
@@ -187,6 +241,48 @@ NSString *userDomainSuffix = @"@kentfieldschools.org";
         _copiedLabel.alphaValue = 1.0f;
     }];
 }
+
+
+// -------------------------------------------------------------------------------
+//  Actions
+
+// -------------------------------------------------------------------------------
+//  updateUserList
+//
+//  Fetch and save an updated list of usernames.
+// -------------------------------------------------------------------------------
+- (IBAction)updateUserList:(id)sender {
+    
+    NSURL *url = [[NSURL alloc]initWithString:_updateURL];
+    
+    //type your URL u can use initWithFormat for placeholders
+    NSURLSession *session = [NSURLSession sharedSession];  //use NSURLSession class
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+    
+    NSMutableURLRequest *mutableRequest = [request mutableCopy];
+    [mutableRequest addValue:_updateAuthHeader forHTTPHeaderField:@"Authorization"];
+    
+    NSURLSessionDataTask *task = [session
+                            dataTaskWithRequest:mutableRequest
+                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                if (error) {
+                                    NSLog(@"Request error: %@", error);
+                                } else {
+                                    if ([self saveUserList:data]) {
+                                        NSLog(@"User dictionary updated!");
+                                    } else {
+                                        NSLog(@"Failed to save user list");
+                                    }
+                                    [self buildUserDictionary];
+                                }
+    }];
+    
+    // Download the list
+    [task resume];
+}
+
+// -------------------------------------------------------------------------------
+//  NSTextView delegate method
 
 // -------------------------------------------------------------------------------
 //  control:textView:completions:forPartialWordRange:indexOfSelectedItem:
