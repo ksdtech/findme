@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 NSString *studentFileName = @"students.txt";
-// NSString *userDomainSuffix = @"@kentfieldschools.org";
 
 @interface ViewController ()
 
