@@ -13,6 +13,8 @@
 		2CC794DB1C03C1B600A9A91B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794DA1C03C1B600A9A91B /* Images.xcassets */; };
 		2CC794DE1C03C1B600A9A91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794DC1C03C1B600A9A91B /* Main.storyboard */; };
 		2CC794EA1C03C1B600A9A91B /* findmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC794E91C03C1B600A9A91B /* findmeTests.m */; };
+		2CC794F41C03D12F00A9A91B /* students.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794F31C03D12F00A9A91B /* students.txt */; };
+		2CC794F51C03D12F00A9A91B /* students.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC794F31C03D12F00A9A91B /* students.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CC794CD1C03C1B600A9A91B /* findme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = findme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC794CD1C03C1B600A9A91B /* Find My Username.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find My Username.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC794D11C03C1B600A9A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC794D21C03C1B600A9A91B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CC794D31C03C1B600A9A91B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		2CC794E31C03C1B600A9A91B /* findmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = findmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC794E81C03C1B600A9A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC794E91C03C1B600A9A91B /* findmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = findmeTests.m; sourceTree = "<group>"; };
+		2CC794F31C03D12F00A9A91B /* students.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = students.txt; sourceTree = "<group>"; };
+		2CC794F61C03D18600A9A91B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,7 @@
 		2CC794CE1C03C1B600A9A91B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CC794CD1C03C1B600A9A91B /* findme.app */,
+				2CC794CD1C03C1B600A9A91B /* Find My Username.app */,
 				2CC794E31C03C1B600A9A91B /* findmeTests.xctest */,
 			);
 			name = Products;
@@ -95,6 +99,8 @@
 			children = (
 				2CC794D11C03C1B600A9A91B /* Info.plist */,
 				2CC794D51C03C1B600A9A91B /* main.m */,
+				2CC794F31C03D12F00A9A91B /* students.txt */,
+				2CC794F61C03D18600A9A91B /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,7 +139,7 @@
 			);
 			name = findme;
 			productName = findme;
-			productReference = 2CC794CD1C03C1B600A9A91B /* findme.app */;
+			productReference = 2CC794CD1C03C1B600A9A91B /* Find My Username.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2CC794E21C03C1B600A9A91B /* findmeTests */ = {
@@ -198,6 +204,7 @@
 			files = (
 				2CC794DB1C03C1B600A9A91B /* Images.xcassets in Resources */,
 				2CC794DE1C03C1B600A9A91B /* Main.storyboard in Resources */,
+				2CC794F41C03D12F00A9A91B /* students.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC794F51C03D12F00A9A91B /* students.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +345,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = findme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "Find My Username";
 			};
 			name = Debug;
 		};
@@ -348,7 +357,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = findme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "Find My Username";
 			};
 			name = Release;
 		};

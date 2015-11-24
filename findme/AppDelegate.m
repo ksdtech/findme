@@ -22,4 +22,9 @@
     // Insert code here to tear down your application
 }
 
+// Quit application when main window is closed
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
 @end
