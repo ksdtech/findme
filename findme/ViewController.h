@@ -8,7 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController<NSTextFieldDelegate>
+// For Xcode 7, use <NSSearchFieldDelegate>
+// For Xcode 6, use <NSTextFieldDelegate>
+@interface ViewController : NSViewController<NSSearchFieldDelegate>
 
 @end
 

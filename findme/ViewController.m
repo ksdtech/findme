@@ -13,6 +13,7 @@ NSString *studentFileName = @"students.txt";
 @interface ViewController ()
 
 // UI elements
+// Note: We can't declare these as (weak) for Mac OS X 10.6 target
 @property IBOutlet NSSearchField *searchField;
 @property IBOutlet NSTextField *copiedLabel;
 

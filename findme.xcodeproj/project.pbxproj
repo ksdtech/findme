@@ -17,6 +17,7 @@
 		2CC795071C03FD8800A9A91B /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC795041C03FD8800A9A91B /* AppConfig.plist */; };
 		2CC795081C03FD8800A9A91B /* students.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC795051C03FD8800A9A91B /* students.txt */; };
 		2CC795091C03FD8800A9A91B /* students.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CC795051C03FD8800A9A91B /* students.txt */; };
+		E6ED6AB81C11089D0047299F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E6ED6AB71C11089D0047299F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +43,12 @@
 		2CC794E31C03C1B600A9A91B /* findmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = findmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC794E81C03C1B600A9A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC794E91C03C1B600A9A91B /* findmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = findmeTests.m; sourceTree = "<group>"; };
-		2CC794F61C03D18600A9A91B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CC794FE1C03FA7300A9A91B /* students-sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "students-sample.txt"; sourceTree = "<group>"; };
 		2CC795011C03FB0B00A9A91B /* AppConfig-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppConfig-sample.plist"; sourceTree = "<group>"; };
 		2CC795041C03FD8800A9A91B /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		2CC795051C03FD8800A9A91B /* students.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = students.txt; sourceTree = "<group>"; };
 		2CC7950A1C03FE0000A9A91B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E6ED6AB71C11089D0047299F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		2CC794D01C03C1B600A9A91B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6ED6AB71C11089D0047299F /* README.md */,
 				2CC7950A1C03FE0000A9A91B /* .gitignore */,
 				2CC795041C03FD8800A9A91B /* AppConfig.plist */,
 				2CC795051C03FD8800A9A91B /* students.txt */,
@@ -110,7 +112,6 @@
 				2CC794FE1C03FA7300A9A91B /* students-sample.txt */,
 				2CC794D11C03C1B600A9A91B /* Info.plist */,
 				2CC794D51C03C1B600A9A91B /* main.m */,
-				2CC794F61C03D18600A9A91B /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -176,7 +177,7 @@
 		2CC794C51C03C1B600A9A91B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Kentfield School District";
 				TargetAttributes = {
 					2CC794CC1C03C1B600A9A91B = {
@@ -237,6 +238,7 @@
 			files = (
 				2CC794D91C03C1B600A9A91B /* ViewController.m in Sources */,
 				2CC794D61C03C1B600A9A91B /* main.m in Sources */,
+				E6ED6AB81C11089D0047299F /* README.md in Sources */,
 				2CC794D41C03C1B600A9A91B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +294,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -307,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -344,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -358,6 +361,7 @@
 				INFOPLIST_FILE = findme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kentfieldschools.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Find My Username";
 			};
 			name = Debug;
@@ -370,6 +374,7 @@
 				INFOPLIST_FILE = findme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kentfieldschools.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Find My Username";
 			};
 			name = Release;
@@ -389,6 +394,7 @@
 				);
 				INFOPLIST_FILE = findmeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kentfieldschools.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/findme.app/Contents/MacOS/findme";
 			};
@@ -405,6 +411,7 @@
 				);
 				INFOPLIST_FILE = findmeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kentfieldschools.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/findme.app/Contents/MacOS/findme";
 			};
@@ -429,6 +436,7 @@
 				2CC794EF1C03C1B600A9A91B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CC794F01C03C1B600A9A91B /* Build configuration list for PBXNativeTarget "findmeTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +445,7 @@
 				2CC794F21C03C1B600A9A91B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
